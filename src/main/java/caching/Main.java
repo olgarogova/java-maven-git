@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         //checkCacheInteger();
         //checkCacheString();
-        checkStorageInteger();
-        //checkStorageString();
+        //checkStorageInteger();
+        checkStorageString();
     }
 
     public static void checkCacheInteger(){
@@ -37,7 +37,7 @@ public class Main {
         System.out.println("myCache.isPresent(10) = " + myCache.isPresent(10));
 
         myCache.delete(element4);
-        System.out.println(element4 + " exists in array: " + myCache.isPresent(element4));
+        System.out.println("After delete: " + element4 + " exists in array: " + myCache.isPresent(element4));
 
         myCache.clear();
         System.out.println("After clear: " + element2 + " exists in array: " + myCache.isPresent(element2));
@@ -85,8 +85,6 @@ public class Main {
         System.out.println("storage1.get(0) = " + storage1.get(0));
         System.out.println("storage1.getLast() = " + storage1.getLast());
 
-
-
         storage1.add(234);
         System.out.println("Before delete: storage1.get(0) = " + storage1.get(0));
         System.out.println("After add element 234: storage1.getLast() = " + storage1.getLast());
@@ -124,11 +122,14 @@ public class Main {
         //System.out.println("After clear: storage1.getLast() = " + storage1.getLast());
         //System.out.println("After clear: storage1.get(2) = " + storage1.get(2));
 
+        System.out.println("Before delete: storage1.get(0) = " + storage1.get(0));
+        System.out.println("Before delete: storage1.get(0) = " + storage1.get(0));
         System.out.println("Before delete: storage1.get(12) = " + storage1.get(12));
         System.out.println("Before delete: storage1.get(13) = " + storage1.get(13));
         System.out.println("Before delete: storage1.getLast() = " + storage1.getLast());
 
         storage1.delete();
+        System.out.println("After delete: storage1.get(0) = " + storage1.get(0));
         System.out.println("After delete: storage1.get(4) = " + storage1.get(4));
         System.out.println("After delete: storage1.get(12) = " + storage1.get(12));
         System.out.println("After delete: storage1.get(13) = " + storage1.get(13));

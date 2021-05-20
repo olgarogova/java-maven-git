@@ -10,8 +10,29 @@ public class CacheElement<T> {
         this.element = element;
     }
 
+    @SuppressWarnings("unchecked")
     public T getElement() {
-        return element;
+        return (T)element.toString();
+    }
+
+    public void setElement(T element) {
+        this.element = element;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
+    @Override
+    public String toString() {
+        return "CacheElement{" +
+                "element=" + element +
+                ", index=" + index +
+                '}';
     }
 
     @Override
@@ -28,15 +49,4 @@ public class CacheElement<T> {
         return Objects.hash(getElement(), getIndex());
     }
 
-    public void setElement(T element) {
-        this.element = element;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
 }

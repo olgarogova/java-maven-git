@@ -16,7 +16,7 @@ public class Cache<T> {
 
     /*
          void add(element, index) метод добавления элемента в кэш (наш массив).
-         ВАЖНО добавление всегда происходит в конец массива.
+         ВАЖНО добавление всегда происходит в конец массива (в первый null).
          Если мы выходим за длину массива, то необходимо удалить самый первый
          элемент в массиве, сдвинуть весь массив влево и добавить новый элемент в конец массива.
          */
@@ -79,14 +79,18 @@ public class Cache<T> {
 
     /*
     element get(index) метод получения объекта из кэша.
-    При нахождении элемента в кэше его необходимо поместить в конец массива,
+    При нахождении элемента в кэше его необходимо поместить в конец массива (в первый null),
     с учетом сдвига остальных элементов влево.
     */
+    @SuppressWarnings("unchecked")
     public T get(int index){
         if (this.isPresent(index)) {
-            cache[capacity - 1] = cache[index];
-            copyArray(cache);
-            return cache[capacity - 1].getElement();
+            for (int i = 0; i < capacity; i++){
+                if (cache[i] == null) {
+                    this.add((T)cache[index],i);
+                    return cache[i - 1].getElement();
+                }
+            }
         }
         return null;
     }

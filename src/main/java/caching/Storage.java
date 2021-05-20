@@ -133,11 +133,9 @@ public class Storage<T> {
     что это очень долгая и сложная операция и будет логичнее использовать кэш.
     Если объекта не оказалось в кэше, то мы берем объект из нашего массива, добавляем его в кэш и возвращаем.
      */
-    @SuppressWarnings("unchecked")
     public T get(int index){
         if (cache.get(index) == null) {
-            CacheElement<T> element = new CacheElement<>(storage[index]);
-            cache.add((T)element, index);
+            cache.add(storage[index],index);
             return storage[index];
         }
         return cache.get(index);
