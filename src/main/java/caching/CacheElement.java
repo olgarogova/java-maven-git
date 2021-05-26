@@ -10,9 +10,8 @@ public class CacheElement<T> {
         this.element = element;
     }
 
-    @SuppressWarnings("unchecked")
     public T getElement() {
-        return (T)element.toString();
+        return element;
     }
 
     public void setElement(T element) {

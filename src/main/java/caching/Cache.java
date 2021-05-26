@@ -21,23 +21,17 @@ public class Cache<T> {
          элемент в массиве, сдвинуть весь массив влево и добавить новый элемент в конец массива.
          */
     public void add(T element, int index){
-        CacheElement<T> tCacheElement = new CacheElement<>(element);
-        boolean elementAdded = false;
+        CacheElement<T> cacheElement = new CacheElement<>(element);
         for (int i = 0; i < capacity; i++){
             if (cache[i] == null) {
-                cache[i] = tCacheElement;
-                elementAdded = true;
-                break;
+                cache[i] = cacheElement;
+                cache[i].setIndex(index);
+                return;
             }
         }
-        if (!elementAdded) {
-            copyArray(cache);
-            cache[capacity - 1] = tCacheElement;
-        }
-    }
-
-    private void copyArray(CacheElement<T>[] cache){
-        System.arraycopy(cache, 1, cache, 0, capacity - 1);
+        copyArray(cache, 1, 0, capacity - 1);
+        cache[capacity - 1] = cacheElement;
+        cache[capacity - 1].setIndex(index);
     }
 
     /*
@@ -47,7 +41,7 @@ public class Cache<T> {
     public void delete(T element) {
         for (int i = 0; i < capacity; i++) {
             if (this.isPresent(element)) {
-                copyArray(cache);
+                copyArray(cache, i, i + 1, capacity - i - 1);
             }
         }
     }
@@ -56,9 +50,8 @@ public class Cache<T> {
     boolean isPresent(element) метод определения есть ли искомый элемент в кэше.
     */
     public boolean isPresent(T element){
-        CacheElement<T> tCacheElement = new CacheElement<>(element);
         for (int i = 0; i < capacity; i++) {
-            if (cache[i] != null && cache[i].equals(tCacheElement)) {
+            if (cache[i] != null && cache[i].getElement().equals(element)) {
                 return true;
             }
         }
@@ -69,7 +62,12 @@ public class Cache<T> {
     boolean isPresent(index) метод определения есть ли искомый элемент в кэше.
     */
     public boolean isPresent(int index){
-        return index < this.capacity && cache[index] != null;
+        for (int i = 0; i < capacity; i++){
+            if (cache[i] != null && cache[i].getIndex() == index) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -82,13 +80,18 @@ public class Cache<T> {
     При нахождении элемента в кэше его необходимо поместить в конец массива (в первый null),
     с учетом сдвига остальных элементов влево.
     */
-    @SuppressWarnings("unchecked")
     public T get(int index){
+        T value = null;
         if (this.isPresent(index)) {
             for (int i = 0; i < capacity; i++){
+                if (cache[i] != null && cache[i].getIndex() == index){
+                    value = cache[i].getElement();
+                }
+            }
+            for (int i = 0; i < capacity; i++){
                 if (cache[i] == null) {
-                    this.add((T)cache[index],i);
-                    return cache[i - 1].getElement();
+                    this.add(value,index);
+                    return value;
                 }
             }
         }
@@ -103,4 +106,9 @@ public class Cache<T> {
             cache[i] = null;
         }
     }
+
+    private void copyArray(CacheElement<T>[] cache, int srcPos, int destPos, int length){
+        System.arraycopy(cache, srcPos, cache, destPos, length);
+    }
+
 }
