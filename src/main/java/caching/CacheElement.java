@@ -6,8 +6,9 @@ public class CacheElement<T> {
     private T element;
     private int index;
 
-    public CacheElement(T element) {
+    public CacheElement(T element, int index) {
         this.element = element;
+        this.index = index;
     }
 
     public T getElement() {

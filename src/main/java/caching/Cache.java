@@ -21,17 +21,15 @@ public class Cache<T> {
          элемент в массиве, сдвинуть весь массив влево и добавить новый элемент в конец массива.
          */
     public void add(T element, int index){
-        CacheElement<T> cacheElement = new CacheElement<>(element);
+        CacheElement<T> cacheElement = new CacheElement<>(element, index);
         for (int i = 0; i < capacity; i++){
             if (cache[i] == null) {
                 cache[i] = cacheElement;
-                cache[i].setIndex(index);
                 return;
             }
         }
         copyArray(cache, 1, 0, capacity - 1);
         cache[capacity - 1] = cacheElement;
-        cache[capacity - 1].setIndex(index);
     }
 
     /*
