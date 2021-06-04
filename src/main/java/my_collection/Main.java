@@ -1,11 +1,20 @@
 package my_collection;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        //sortHashMapByKey();
-        //sortHashMapByEntity();
+        workWithCollection();
+        sortHashMapByKey();
+        sortHashMapByEntity();
         workWithUser();
     }
 
@@ -35,9 +44,6 @@ public class Main {
 
         Set<Human> duplicates = findDuplicates(humans);
         System.out.println("The list of duplicates:");
-        /*for (Human h: duplicates){
-            System.out.println(h.toString());
-        }*/
         System.out.println(duplicates);
 
         Set<Human> uniqes = deleteDuplicates(humans);
@@ -75,9 +81,9 @@ public class Main {
     }
 
     public static void workWithUser() {
-        User user1 = new User("Administrator", User.Roles.ADMIN);
-        User user2 = new User("Vasya", User.Roles.USER);
-        User user3 = new User("Ivan", User.Roles.MODERATOR);
+        User user1 = new User("Administrator", Roles.ADMIN);
+        User user2 = new User("Vasya", Roles.USER);
+        User user3 = new User("Ivan", Roles.MODERATOR);
 
         welcomeUserMessage(user1);
         welcomeUserMessage(user2);
@@ -86,20 +92,12 @@ public class Main {
     }
 
     public static void welcomeUserMessage(User user) {
-/*        Map<User.Roles, String> rolesDescription = new HashMap<>();
-        rolesDescription.put(User.Roles.ADMIN, "(полные права)");
-        rolesDescription.put(User.Roles.USER, "(просмотр, написание комментариев)");
-        rolesDescription.put(User.Roles.MODERATOR, "(модерация комментариев)");
+        Map<Roles, String> rolesDescription = new EnumMap<>(Roles.class);
+        rolesDescription.put(Roles.ADMIN, "(полные права)");
+        rolesDescription.put(Roles.USER, "(просмотр, написание комментариев)");
+        rolesDescription.put(Roles.MODERATOR, "(модерация комментариев)");
 
         System.out.println("Приветствуем " + user.getName() + " с ролью " + user.getRole() + " " + rolesDescription.get(user.getRole()));
-*/
-
-        Map<User.Roles, String> rolesDescription2 = new EnumMap<>(User.Roles.class);
-        rolesDescription2.put(User.Roles.ADMIN, "(полные права)");
-        rolesDescription2.put(User.Roles.USER, "(просмотр, написание комментариев)");
-        rolesDescription2.put(User.Roles.MODERATOR, "(модерация комментариев)");
-
-        System.out.println("Приветствуем " + user.getName() + " с ролью " + user.getRole() + " " + rolesDescription2.get(user.getRole()));
     }
 
     public static void sortHashMapByKey() {
@@ -110,9 +108,9 @@ public class Main {
         hashMap.put("Elena", 21);
         hashMap.put("Vera",22);
 
-        System.out.println(hashMap);
+        System.out.println("HashMap: " + hashMap);
         Map<String, Integer> sortedHashMap = new TreeMap<>(hashMap);
-        System.out.println(sortedHashMap);
+        System.out.println("HashMap sorted by key: " + sortedHashMap);
     }
 
     public static void sortHashMapByEntity(){
@@ -123,7 +121,7 @@ public class Main {
         hashMap.put("Elena", 21);
         hashMap.put("Vera",22);
 
-        System.out.println(hashMap);
+        System.out.println("HashMap: " + hashMap);
 
         List<Map.Entry<String,Integer>> sorted = new ArrayList<>(hashMap.entrySet());
         sorted.sort(Map.Entry.comparingByValue());
@@ -133,6 +131,6 @@ public class Main {
             result.put(entry.getKey(), entry.getValue());
         }
 
-        System.out.println(result);
+        System.out.println("HashMap sorted by entity: " + result);
     }
 }
