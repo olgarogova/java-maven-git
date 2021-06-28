@@ -38,7 +38,14 @@ public class Main {
         try (Stream<String> lineStream = Files.lines(Paths.get("result.txt"))) {
             long totalNumberUUID = lineStream.map(line -> line.split(", "))
                     .flatMap(Arrays::stream)
-                    .filter(line -> sumOfNumbers(line) > 100)
+                    .map(line -> line.replaceAll("[^0-9]", ""))
+                    .filter(line -> {
+                        int sum = 0;
+                        for (int i = 0; i < line.length(); i++){
+                            sum = sum + Character.getNumericValue(line.charAt(i));
+                        }
+                        return sum > 100;
+                    })
                     .count();
             System.out.println("Количество элементов UUID, в которых сумма цифр > 100: " + totalNumberUUID);
         } catch (Exception e) {
@@ -73,29 +80,25 @@ public class Main {
     public static void createObjectsFromReadFile() {
         Base64.Decoder decoder = Base64.getUrlDecoder();
         Pattern pattern = Pattern.compile(",");
-
-        try (Stream<String> lines = Files.lines(Paths.get("File.txt"))) {
-            List<Sausage> sausages = lines.map(line -> {
-                String[] arr;
-                arr = pattern.split(new String(decoder.decode(line), StandardCharsets.UTF_8));
-                return new Sausage(
-                                arr[0].substring(6, arr[0].length() - 1),
-                                Integer.parseInt(arr[1].substring(8)),
-                                Long.parseLong(arr[2].substring(6)));
-                    }).collect(Collectors.toList());
+        try {
+            List<String> lines = Files.readAllLines(Paths.get("File.txt"));
+            List<Sausage> sausages = lines.stream()
+                    .map(decoder::decode)
+                    .map(line -> new String(line, StandardCharsets.UTF_8))
+                    .map(line -> {
+                        String[] arr;
+                        arr = pattern.split(line);
+                        return arr;
+                    })
+                    .map(arr -> new Sausage(
+                            arr[0].substring(6, arr[0].length() - 1),
+                            Integer.parseInt(arr[1].substring(8)),
+                            Long.parseLong(arr[2].substring(6)))
+                    )
+                    .collect(Collectors.toList());
             sausages.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private static int sumOfNumbers(String s){
-        int sum = 0;
-        for (int i = 0; i < s.length(); i++){
-            if (Character.isDigit(s.charAt(i))) {
-                sum = sum + Character.getNumericValue(s.charAt(i));
-            }
-        }
-        return sum;
     }
 }
