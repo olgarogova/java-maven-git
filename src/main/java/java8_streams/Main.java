@@ -39,13 +39,7 @@ public class Main {
             long totalNumberUUID = lineStream.map(line -> line.split(", "))
                     .flatMap(Arrays::stream)
                     .map(line -> line.replaceAll("[^0-9]", ""))
-                    .filter(line -> {
-                        int sum = 0;
-                        for (int i = 0; i < line.length(); i++){
-                            sum = sum + Character.getNumericValue(line.charAt(i));
-                        }
-                        return sum > 100;
-                    })
+                    .filter(line -> countSumOfNumbers(line) > 100)
                     .count();
             System.out.println("Количество элементов UUID, в которых сумма цифр > 100: " + totalNumberUUID);
         } catch (Exception e) {
@@ -85,11 +79,7 @@ public class Main {
             List<Sausage> sausages = lines.stream()
                     .map(decoder::decode)
                     .map(line -> new String(line, StandardCharsets.UTF_8))
-                    .map(line -> {
-                        String[] arr;
-                        arr = pattern.split(line);
-                        return arr;
-                    })
+                    .map(pattern::split)
                     .map(arr -> new Sausage(
                             arr[0].substring(6, arr[0].length() - 1),
                             Integer.parseInt(arr[1].substring(8)),
@@ -100,5 +90,13 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static int countSumOfNumbers(String line){
+        int sum = 0;
+        for (int i = 0; i < line.length(); i++){
+            sum = sum + Character.getNumericValue(line.charAt(i));
+        }
+        return sum;
     }
 }
