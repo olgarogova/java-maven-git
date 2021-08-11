@@ -1,0 +1,6 @@
+14:11:55.769 260  [Thread-1] INFO  multithreading.DeadlockExample2 - Thread-1 Attempting to lock lock2
+14:11:55.769 260  [Thread-0] INFO  multithreading.DeadlockExample1 - Thread-0 Attempting to lock lock1
+14:11:55.772 263  [Thread-1] INFO  multithreading.DeadlockExample2 - Thread-1  locked lock2
+14:11:55.772 263  [Thread-0] INFO  multithreading.DeadlockExample1 - Thread-0  locked lock1
+14:11:58.774 3265 [Thread-0] INFO  multithreading.DeadlockExample1 - Thread-0 Attempting to lock lock2
+14:11:58.774 3265 [Thread-1] INFO  multithreading.DeadlockExample2 - Thread-1 Attempting to lock lock1

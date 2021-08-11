@@ -1,0 +1,6 @@
+14:04:15.082 249  [main] INFO  multithreading.Main - Race Condition: 
+14:04:15.099 266  [Thread1] INFO  multithreading.CounterRunnable - Thread1: 1502
+14:04:15.099 266  [Thread2] INFO  multithreading.CounterRunnable - Thread2: 1549
+14:04:15.101 268  [main] INFO  multithreading.Main - Race Condition fixed, using AtomicInteger counter:
+14:04:15.109 276  [Thread3] INFO  multithreading.CounterRunnable - Thread3: 4000
+14:04:15.109 276  [Thread4] INFO  multithreading.CounterRunnable - Thread4: 4000
