@@ -1,0 +1,80 @@
+13:57:23.275 318  [Thread-6] INFO  multithreading.Reader - Message List is empty!
+13:57:23.274 317  [Thread-5] INFO  multithreading.Reader - Message List is empty!
+13:57:23.273 316  [Thread-7] INFO  multithreading.Updater - Nothing update, Message List is empty!
+13:57:23.286 329  [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 0
+13:57:23.286 329  [Thread-2] INFO  multithreading.Writer - Writer sends SMS Thread-2 message 0
+13:57:23.286 329  [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 0
+13:57:23.285 328  [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 0
+13:57:23.285 328  [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 0
+13:57:46.288 23331 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 1
+13:57:55.289 32332 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 1
+13:58:05.288 42331 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-2 message 0
+13:58:06.288 43331 [Thread-2] INFO  multithreading.Writer - Writer sends SMS Thread-2 message 1
+13:58:07.284 44327 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-3 message 0
+13:58:09.289 46332 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 1
+13:58:13.296 50339 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-1 message 0 -> Thread-7 updatedMessage 0
+13:58:15.289 52332 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 2
+13:58:17.288 54331 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 1
+13:58:18.291 55334 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 2
+13:58:39.290 76333 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 2
+13:58:41.285 78328 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 0
+13:58:41.289 78332 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-0 message 0
+13:58:43.288 80331 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 2
+13:58:46.291 83334 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 3
+13:58:51.289 88332 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 3
+13:58:51.290 88333 [Thread-2] INFO  multithreading.Writer - Writer sends SMS Thread-2 message 2
+13:59:03.296 100339 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-4 message 0 -> Thread-7 updatedMessage 1
+13:59:04.289 101332 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 3
+13:59:05.291 102334 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 3
+13:59:21.292 118335 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 4
+13:59:24.286 121329 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 1
+13:59:24.289 121332 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-4 message 1
+13:59:40.292 137335 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 4
+13:59:42.291 139334 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 4
+13:59:43.292 140335 [Thread-2] INFO  multithreading.Writer - Writer sends SMS Thread-2 message 3
+13:59:45.290 142333 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 4
+13:59:53.298 150341 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-3 message 1 -> Thread-7 updatedMessage 2
+13:59:55.292 152335 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 5
+13:59:59.290 156333 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 2
+14:00:12.286 169329 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-2 message 1
+14:00:20.291 177334 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 5
+14:00:23.292 180335 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 5
+14:00:24.292 181335 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 6
+14:00:29.291 186334 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 5
+14:00:36.296 193339 [Thread-2] INFO  multithreading.Writer - Writer sends SMS Thread-2 message 4
+14:00:43.299 200342 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-0 message 1 -> Thread-7 updatedMessage 3
+14:00:44.292 201335 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 3
+14:00:45.288 202331 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-4 message 2
+14:00:45.293 202336 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 7
+14:00:50.292 207335 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 6
+14:00:54.292 211335 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 6
+14:01:09.291 226334 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 6
+14:01:22.288 239331 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-1 message 1
+14:01:22.292 239335 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 7
+14:01:23.294 240337 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 8
+14:01:24.296 241339 [Thread-2] INFO  multithreading.Writer - Message List is full!
+14:01:30.292 247335 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-3 message 2
+14:01:33.299 250342 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-0 message 2 -> Thread-7 updatedMessage 4
+14:01:38.293 255336 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 7
+14:01:42.292 259335 [Thread-4] INFO  multithreading.Writer - Message List is full!
+14:01:49.295 266338 [Thread-3] INFO  multithreading.Writer - Message List is full!
+14:01:52.293 269336 [Thread-1] INFO  multithreading.Writer - Message List is full!
+14:02:03.292 280335 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 4
+14:02:04.290 281333 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-1 message 2
+14:02:19.296 296339 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 9
+14:02:20.294 297337 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 8
+14:02:20.296 297339 [Thread-2] INFO  multithreading.Writer - Message List is full!
+14:02:23.300 300343 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-3 message 3 -> Thread-7 updatedMessage 5
+14:02:30.293 307336 [Thread-4] INFO  multithreading.Writer - Message List is full!
+14:02:38.293 315336 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 5
+14:02:40.293 317336 [Thread-1] INFO  multithreading.Writer - Writer sends SMS Thread-1 message 7
+14:02:43.290 320333 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-4 message 3
+14:02:54.295 331338 [Thread-0] INFO  multithreading.Writer - Writer sends SMS Thread-0 message 9
+14:02:54.297 331340 [Thread-3] INFO  multithreading.Writer - Message List is full!
+14:02:57.297 334340 [Thread-2] INFO  multithreading.Writer - Message List is full!
+14:03:13.302 350345 [Thread-7] INFO  multithreading.Updater - Updater updates SMS: Thread-2 message 2 -> Thread-7 updatedMessage 6
+14:03:14.294 351337 [Thread-5] INFO  multithreading.Reader - Reader reads SMS Thread-7 updatedMessage 6
+14:03:19.291 356334 [Thread-6] INFO  multithreading.Reader - Reader reads SMS Thread-1 message 3
+14:03:25.297 362340 [Thread-3] INFO  multithreading.Writer - Writer sends SMS Thread-3 message 10
+14:03:26.294 363337 [Thread-4] INFO  multithreading.Writer - Writer sends SMS Thread-4 message 8
+14:03:30.294 367337 [Thread-1] INFO  multithreading.Writer - Message List is full!

@@ -1,0 +1,12 @@
+14:13:11.844 272  [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1 Attempting to lock lock1
+14:13:11.844 272  [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0 Attempting to lock lock1
+14:13:11.848 276  [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1  locked lock1
+14:13:14.849 3277 [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1 Attempting to lock lock2
+14:13:14.850 3278 [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1  locked lock2
+14:13:14.851 3279 [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1  unlocking lock1
+14:13:14.855 3283 [Thread-1] INFO  multithreading.DeadlockFixed2 - Thread-1  unlocking lock2
+14:13:14.855 3283 [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0  locked lock1
+14:13:17.858 6286 [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0 Attempting to lock lock2
+14:13:17.861 6289 [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0  locked lock2
+14:13:17.862 6290 [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0  unlocking lock1
+14:13:17.863 6291 [Thread-0] INFO  multithreading.DeadlockFixed1 - Thread-0  unlocking lock2
