@@ -39,7 +39,7 @@ public class Cache<T> {
     public void delete(T element) {
         for (int i = 0; i < capacity; i++) {
             if (this.isPresent(element)) {
-                copyArray(cache, i, i + 1, capacity - i - 1);
+                copyArray(cache, i + 1, i, capacity - i - 1);
             }
         }
     }
