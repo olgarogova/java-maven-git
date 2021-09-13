@@ -29,10 +29,6 @@ public class Storage<T> {
         this.cache = new Cache<>(10);
     }
 
-    public void setNumberElementsInStorage(int numberElementsInStorage) {
-        this.numberElementsInStorage = numberElementsInStorage;
-    }
-
     public int getNumberElementsInStorage() {
         for (T t : storage) {
             if (t != null) {
