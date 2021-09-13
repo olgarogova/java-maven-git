@@ -26,33 +26,33 @@ class StorageTest {
 
     @Test
     @DisplayName("Add element to storage")
-    void add() {
+    void ensureThatElementAddedToStorage() {
         assertEquals(123, storage.get(0));
     }
 
     @Test
     @DisplayName("Delete element from storage")
-    void delete() {
+    void ensureThatElementDeletedFromStorage() {
         storage.delete();
         assertEquals(123, storage.getLast());
     }
 
     @Test
     @DisplayName("Clear storage")
-    void clear() {
+    void ensureThatStorageIsCleared() {
         storage.clear();
         assertNull(storage.get(0));
     }
 
     @Test
     @DisplayName("Get Last Element from storage")
-    void getLast() {
+    void getLastShouldReturnLastElement() {
         assertEquals(456, storage.getLast());
     }
 
     @Test
     @DisplayName("Get Element from storage (by index)")
-    void get() {
+    void getShouldReturnElementByIndex() {
         assertEquals(123, storage.get(0));
     }
 }

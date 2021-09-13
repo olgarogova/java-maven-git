@@ -23,44 +23,44 @@ class CacheTest {
 
     @Test
     @DisplayName("Capacity should be 10")
-    void getCapacity() {
+    void getCapacityShouldReturnCorrectValue() {
         assertEquals(10, cache.getCapacity());
     }
 
     @Test
     @DisplayName("Check that element added to cache")
-    void add() {
+    void ensureThatElementAddedToCache() {
         assertEquals(123, cache.get(0));
     }
 
     @Test
     @DisplayName("Check that element deleted from cache")
-    void delete() {
+    void ensureThatElementDeletedFromCache() {
         cache.delete(element0);
         assertFalse(cache.isPresent(element0));
     }
 
     @Test
     @DisplayName("Check that element is present in cache (by index)")
-    void isPresent() {
+    void ensureThatElementIsPresentByIndex() {
         assertTrue(cache.isPresent(0));
     }
 
     @Test
     @DisplayName("Check that element is present in cache (by element)")
-    void testIsPresent() {
+    void ensureThatElementIsPresentByElement() {
         assertTrue(cache.isPresent(element0));
     }
 
     @Test
     @DisplayName("Check element getting")
-    void get() {
+    void getShouldReturnElement() {
         assertSame(element0, cache.get(0));
     }
 
     @Test
     @DisplayName("Check that cache is cleaned")
-    void clear() {
+    void ensureThatCacheIsCleared() {
         cache.clear();
         assertFalse(cache.isPresent(element0));
     }
