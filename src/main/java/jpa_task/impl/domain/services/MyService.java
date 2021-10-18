@@ -14,8 +14,7 @@ public class MyService {
     private final OrderService orderService;
     private final SupplierService supplierService;
 
-    @Autowired
-    public MyService(OrderService orderService, SupplierService supplierService) {
+    public MyService(@Autowired OrderService orderService, @Autowired SupplierService supplierService) {
         this.orderService = orderService;
         this.supplierService = supplierService;
     }
