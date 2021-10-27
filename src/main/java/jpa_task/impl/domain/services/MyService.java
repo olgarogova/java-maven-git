@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+//@ComponentScan
 @Service
 public class MyService {
 

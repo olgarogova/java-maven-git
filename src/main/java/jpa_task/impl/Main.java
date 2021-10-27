@@ -6,6 +6,8 @@ import jpa_task.impl.domain.entity.Customer;
 import jpa_task.impl.domain.entity.Order;
 import jpa_task.impl.domain.entity.Product;
 import jpa_task.impl.domain.entity.Supplier;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
@@ -13,9 +15,10 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args)  {
-        workWithHibernate();
+        SpringApplication.run(Main.class, args);
     }
 
     public static void workWithHibernate() {
@@ -67,17 +70,19 @@ public class Main {
         crudOperationsProduct.insertEntity(product3);
         crudOperationsProduct.insertEntity(product4);
 
+        //insert customers
+        crudOperationsCustomer.insertEntity(customer1);
+        crudOperationsCustomer.insertEntity(customer2);
+        crudOperationsCustomer.insertEntity(customer3);
+        crudOperationsCustomer.insertEntity(customer4);
+
         //insert orders
         crudOperationsOrder.insertEntity(order1);
         crudOperationsOrder.insertEntity(order2);
         crudOperationsOrder.insertEntity(order3);
         crudOperationsOrder.insertEntity(order4);
 
-        //insert customers
-        crudOperationsCustomer.insertEntity(customer1);
-        crudOperationsCustomer.insertEntity(customer2);
-        crudOperationsCustomer.insertEntity(customer3);
-        crudOperationsCustomer.insertEntity(customer4);
+
 
         //find customer
         Customer customer = crudOperationsCustomer.findEntity(1);
