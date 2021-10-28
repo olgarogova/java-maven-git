@@ -5,17 +5,15 @@ import jpa_task.impl.domain.entity.Order;
 import jpa_task.impl.domain.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Set;
 
 import static org.mockito.Mockito.*;
 
-@ExtendWith(SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 class MyServiceTest {
 
-    @Autowired
     private MyService myService;
 
     OrderService orderService = mock(OrderService.class);
